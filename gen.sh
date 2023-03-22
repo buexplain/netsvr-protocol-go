@@ -2,7 +2,6 @@
 
 # 更新依赖包
 go get -v github.com/buexplain/netsvr-protocol@latest
-go get -v google.golang.org/protobuf@latest
 
 # 将依赖包拉入当前目录
 go mod vendor
@@ -32,4 +31,3 @@ done
 
 # 清空依赖信息
 rm -r vendor
-rm -r go.sum
