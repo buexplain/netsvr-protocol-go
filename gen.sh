@@ -1,7 +1,16 @@
 #!/bin/bash
+
+# 更新依赖包
+go get -u -v ./...
+
+# 将依赖拉入当前目录
+go mod vendor
+
+# 删除旧的代码
 mkdir -p ./protocol
 rm -rf ./protocol/*
 
+#生成新的代码
 # https://protobuf.dev/reference/go/go-generated/
 
 # shellcheck disable=SC2046
@@ -19,3 +28,5 @@ for file in $match; do
     exit $?
   fi
 done
+
+rm -fr vendor
