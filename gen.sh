@@ -1,14 +1,17 @@
 #!/bin/bash
 
+# 删除旧的代码
+for file in ./netsvr/*; do
+  if [[ "$file" == *".pb.go" ]]; then
+    rm -rf "$file";
+  fi
+done
+
 # 更新依赖包
 go get -v github.com/buexplain/netsvr-protocol@latest
 
 # 将依赖包拉入当前目录
 go mod vendor
-
-# 删除旧的代码
-mkdir -p ./protocol
-rm -rf ./protocol/*
 
 #生成新的代码
 # https://protobuf.dev/reference/go/go-generated/
