@@ -18,6 +18,6 @@
 // 约定worker id范围
 package constant
 
-// MaxWorkerId business的编号范围
-const MaxWorkerId = 999
-const MinWorkerId = 1
+// WorkerIdMax business的编号范围
+const WorkerIdMax = 999
+const WorkerIdMin = 1
