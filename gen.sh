@@ -8,7 +8,7 @@ for file in ./netsvr/*; do
 done
 
 # 更新依赖包
-go get -v github.com/buexplain/netsvr-protocol/v2@latest
+go get -v github.com/buexplain/netsvr-protocol/v2@v2.0.1
 
 # 将依赖包拉入当前目录
 go mod vendor
