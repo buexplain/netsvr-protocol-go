@@ -8,7 +8,7 @@ for file in ./netsvr/*; do
 done
 
 # 更新依赖包
-go get -v github.com/buexplain/netsvr-protocol/v3@v3.1.0
+go get -v github.com/buexplain/netsvr-protocol/v4@v4.0.0
 
 # 将依赖包拉入当前目录
 go mod vendor
@@ -18,7 +18,7 @@ go mod vendor
 
 # shellcheck disable=SC2046
 root_dir="$(pwd)"
-proto_path="$root_dir/vendor/github.com/buexplain/netsvr-protocol/v3"
+proto_path="$root_dir/vendor/github.com/buexplain/netsvr-protocol/v4"
 match="$proto_path/*.proto"
 for file in $match; do
   proto="$(basename "$file")"
