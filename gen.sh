@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # 删除旧的代码
-for file in ./netsvr/*; do
+for file in ./netsvrProtocol/*; do
   if [[ "$file" == *".pb.go" ]]; then
     rm -rf "$file";
   fi
 done
 
 # 更新依赖包
-go get -v github.com/buexplain/netsvr-protocol/v4@v4.0.0
+go get -v github.com/buexplain/netsvr-protocol/v5@v5.0.0
 
 # 将依赖包拉入当前目录
 go mod vendor
@@ -18,7 +18,7 @@ go mod vendor
 
 # shellcheck disable=SC2046
 root_dir="$(pwd)"
-proto_path="$root_dir/vendor/github.com/buexplain/netsvr-protocol/v4"
+proto_path="$root_dir/vendor/github.com/buexplain/netsvr-protocol/v5"
 match="$proto_path/*.proto"
 for file in $match; do
   proto="$(basename "$file")"
